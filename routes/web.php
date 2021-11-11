@@ -18,9 +18,9 @@ $router->get('/', function () use ($router) {
 });
 
 $router->group(['prefix' => 'api'], function () use ($router) {
-	$router->get('participants',  ['uses' => 'ParticipantController@showAllParticipants']);
-	$router->get('participant/{id}', ['uses' => 'ParticipantController@showParticipant']);
-	$router->post('participant/add', ['uses' => 'ParticipantController@addNewParticipant']);
-	$router->delete('participant/remove/{id}', ['uses' => 'ParticipantController@removeParticipant']);
-	$router->patch('participant/{id}/{action:increment|decrement}', ['uses' => 'ParticipantController@updateParticipantPoint']);
+	$router->get('participants',  ['uses' => 'LeaderboardController@showAllParticipants']);
+	$router->get('participant/{id}', ['uses' => 'LeaderboardController@showParticipant']);
+	$router->post('participant/add', ['uses' => 'LeaderboardController@addNewParticipant']);
+	$router->delete('participant/remove/{id}', ['uses' => 'LeaderboardController@removeParticipant']);
+	$router->patch('participant/{id}/{action:increment|decrement}', ['uses' => 'LeaderboardController@updateParticipantPoint']);
 });

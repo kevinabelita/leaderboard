@@ -4,3 +4,11 @@ Homestead.json
 Homestead.yaml
 .env
 .phpunit.result.cache
+# OS generated files #
+######################
+.DS_Store?
+ehthumbs.db
+._*
+# Icon?
+Thumbs.db
+/routes/.nfs.*

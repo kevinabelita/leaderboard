@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Participant;
 use Illuminate\Http\Request;
 
-class ParticipantController extends Controller
+class LeaderboardController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -19,7 +19,7 @@ class ParticipantController extends Controller
 
     public function showAllParticipants()
     {
-        return response()->json(Participant::orderByDesc('points')->get());
+        return response()->json(Participant::orderByDesc('points')->get(['id', 'name', 'points']));
     }
 
     public function showParticipant($id, Request $request)
@@ -52,7 +52,7 @@ class ParticipantController extends Controller
     public function removeParticipant($id)
     {
         Participant::findOrFail($id)->delete();
-        
+
         return response('Removed Successfully', 200);
     }
 }
