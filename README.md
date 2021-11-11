@@ -28,6 +28,18 @@ php artisan serve
 
 ## API Routes
 
+
+#### Add a participant in the Leaderboard
+```
+POST http://localhost:8000/api/participant/add
+```
+PARAMS
+```
+name => required
+age => required
+address => required
+```
+
 #### Display all participants in the Leaderboard
 ```
 GET http://localhost:8000/api/participants
@@ -35,15 +47,15 @@ GET http://localhost:8000/api/participants
 
 #### Show a particular participant in full detail
 ```
-GET http://localhost:8000/api/participant/<participant_id>
+GET http://localhost:8000/api/participant/:participant_id
 ```
 
 #### Increment or Decrement Participant's points
 ```
-PATCH http://localhost:8000/api/participant/<participant_id>/<increment|decrement>
+PATCH http://localhost:8000/api/participant/:participant_id/:action[increment|decrement]
 ```
 
 #### Remove a participant
 ```
-DELETE http://localhost:8000/api/participant/remove/<participant_id>
+DELETE http://localhost:8000/api/participant/remove/:participant_id
 ```
